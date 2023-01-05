@@ -1,0 +1,44 @@
+First thing delete everything referring ( quad_remesher_1_1 )
+C:\Users
+C:\ProgramData
+----------------------
+Folder ( quad_remesher_1_1)
+
+Copy this folder (whole as it is) into your directory and Paste it into this location.
+
+C:\Users\xxx Your Name xxx\AppData\Roaming\Blender Foundation\Blender\2.92, 2.93 or 3.00\scripts\addons\
+
+NOTE: Check your Unit Letter if it is C: or another
+      Check your name (xxxYour Namexxx).
+      Check your version (2.92, 2.93 or 3.00).
+
+will be like this
+C:\Users\xxxYour Namexxx\AppData\Roaming\Blender Foundation\Blender\2.92, 2.93 or 3.00\scripts\addons\quad_remesher_1_1
+
+----------------------
+Folder (Exoside)
+  
+Copy this folder (whole as it is) into your directory and Paste it into this location.
+C:\ProgramData\
+
+will be like this
+C:\ProgramData\Exoside
+----------------------
+After that open Blender, go to settings and just activate the Addon ( quad_remesher_1_1 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

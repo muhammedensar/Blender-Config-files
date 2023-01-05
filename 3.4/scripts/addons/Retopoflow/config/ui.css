@@ -1,0 +1,1354 @@
+:root {
+    --button-background: hsla(200, 0%, 20%, 1.0);
+    --button-hover-background: hsla(200, 0%, 35%, 1.00);
+    --button-selected-background: rgb(10, 135, 197);
+
+    --button-text: hsl(200, 0%, 90%);
+    --button-selected-text: white;
+    --button-disabled-text: hsl(200, 0%, 50%);
+
+    --option-background: transparent;
+    --option-hover-background: hsla(200, 0%, 50%, 0.25);
+    --option-selected-background: rgb(10, 135, 197);
+
+    --option-text: hsl(200, 0%, 90%);
+    --option-selected-text: white;
+    --option-disabled-text: hsl(200, 0%, 50%);
+
+    --header-background: hsla(200, 0%, 5%, 1);
+    --panel-background: hsla(200, 0%, 15%, 0.98);
+    --panel-two-background: hsla(200, 0%, 5%, 0.4);
+    --collection: hsla(200, 0%, 5%, 0);
+
+    --text: rgb(221, 221, 221);
+
+    --alert-note:      rgba( 34, 34, 34, 0.99);
+    --alert-warning:   rgba(128, 80,  0, 0.95);
+    --alert-error:     rgba( 96, 48,  0, 0.95);
+    --alert-assert:    rgba( 96,  0,  0, 0.95);
+    --alert-exception: rgba( 96,  0,  0, 0.95);
+}
+
+* {
+    color: var(--text);
+    border: 0px;
+    background: transparent;
+    font-size: 11px;
+}
+
+/********************************/
+/* GENERAL ELEMENT STYLING      */
+
+*.full-size {
+    display: inline;
+    width: 100%;
+    text-align: center;
+}
+
+*.half-size {
+    display: inline;
+    width: 50%;
+    text-align: center;
+}
+
+*.third-size {
+    display: inline;
+    width: 33.333%;
+    text-align: center;
+}
+
+*.fourth-size {
+    display: inline;
+    width: 25%;
+    text-align: center;
+}
+
+*.fifth-size {
+    display: inline;
+    width: 20%;
+    text-align: center;
+}
+
+label {
+    display: block;
+    width: 100%;
+}
+
+/********************************/
+/* GENERAL BUTTON STYLING       */
+
+button {
+    display: block;
+    width: 100%;
+    margin: 2px;
+    border: 0px;
+    background: var(--button-background);
+    color: var(--text);
+    text-align: center;
+}
+button:focus {
+    background: var(--button-hover-background);
+}
+button:active {
+    background: var(--button-selected-background);
+}
+button:hover {
+    background: var(--button-hover-background);
+}
+button:active:hover {
+    background: var(--button-selected-background);
+}
+button:disabled {
+    background-color: var(--button-background);
+    color: var(--button-disabled-text);
+}
+
+
+
+/********************************/
+/* radio input                  */
+/********************************/
+
+
+input[type="radio"] {
+    position: absolute;
+    /*display: none;*/
+}
+input[type="radio"]::marker {
+    display: none;
+}
+
+label[type="radio"] {
+    background: var(--button-background);
+    color: var(--option-text);
+    margin: 2px;
+    border: 0px;
+    padding: 4px 6px 4px 6px;
+}
+label[type="radio"]:hover {
+    background: var(--button-hover-background);
+}
+label[type="radio"]:checked {
+    background: var(--button-selected-background);
+    color: var(--option-selected-text);
+}
+label[type="radio"]:active {
+    background: var(--button-selected-background);
+}
+label[type="radio"]:active:hover {
+    background: var(--button-selected-background);
+}
+label[type="radio"]:disabled {
+    background-color: var(--button-background);
+    color: var(--option-disabled-text);
+}
+
+
+
+/**********************/
+/* checkbox input     */
+/**********************/
+
+
+label[type="checkbox"] {
+    background: var(--option-background);
+    color: var(--option-text);
+    margin: 2px 2px;
+    border: 0px;
+    padding: 4px 2px;
+}
+label[type="checkbox"]:hover {
+    background: var(--option-hover-background);
+}
+label[type="checkbox"]:active {
+    background: var(--option-hover-background);
+}
+
+input[type="checkbox"]::marker {
+    background: var(--button-background);
+    margin: 0px 6px 1px 2px;
+    border: 0px;
+    border-radius: 2px;
+    padding: 2px;
+    width: 20px;
+    height: 14px;
+}
+input[type="checkbox"]:checked::marker {
+    background-color: var(--button-selected-background);
+    background-image: url('checkmark.png');
+}
+input[type="checkbox"]:hover::marker {
+    background-color: var(--button-hover-background);
+}
+input[type="checkbox"]:hover:checked::marker {
+    background-color: var(--button-selected-background);
+}
+input[type="checkbox"]:active:hover::marker {
+    background-color: var(--button-selected-background);
+}
+
+
+label[type="checkbox"]:hover input[type="checkbox"]::marker {
+    background-color: var(--button-hover-background);
+}
+label[type="checkbox"]:hover input[type="checkbox"]:checked::marker {
+    background-color: var(--button-selected-background);
+}
+label[type="checkbox"]:active:hover input[type="checkbox"]::marker {
+    background-color: var(--button-selected-background);
+}
+
+label > span {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+
+
+
+/********************************/
+/* range input                  */
+/********************************/
+
+input[type="range"] {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: transparent;
+}
+
+input[type="range"] > *.inputrange-left {
+    background-color: var(--option-selected-background);
+    border: 0px;
+    top: -6px;
+    z-index: 0;
+}
+input[type="range"] > *.inputrange-right {
+    background-color: var(--option-background);
+    border: 0px;
+    top: -6px;
+    z-index: 0;
+}
+input[type="range"]:active > *.inputrange-left {
+    background-color: hsla(200, 100%, 62.5%, 1.0);
+}
+input[type="range"] > *.inputrange-handle {
+    left: 0px;
+    top: -4px;
+    width: 8px;
+    height: 10px;
+    background-color: hsl(200, 0%, 70%);
+    z-index: 1;
+    border-radius: 3px;
+}
+
+
+
+
+/********************************/
+/* input                        */
+/********************************/
+
+*.labeledinputtext-container {
+    padding-left: 4px;
+}
+
+
+/* old ^, new v */
+
+
+/********************************/
+/* text input                   */
+/********************************/
+
+input[type="text"] {
+    color: var(--text);
+    background: var(--button-background);
+    padding: 4px 8px 4px 8px;
+    height: 24px;
+}
+
+input[type="text"]:hover {
+    color: var(--text);
+    background: var(--button-hover-background);
+}
+
+input[type="text"]:focus {
+    color: var(--text);
+    background: var(--button-selected-background);
+}
+
+input[type="text"]:disabled {
+    background-color: var(--button-background);
+    color: var(--button-disabled-text);
+    cursor: default;
+}
+
+
+/********************************/
+/* number input                 */
+/********************************/
+
+input[type="number"] {
+    color: var(--text);
+    background: var(--button-background);
+    padding: 4px 8px 4px 8px;
+    height: 24px;
+}
+
+input[type="number"]:hover {
+    color: var(--text);
+    background: var(--button-hover-background);
+}
+
+input[type="number"]:focus {
+    color: var(--text);
+    background: var(--button-selected-background);
+}
+
+input[type="number"]:disabled {
+    background-color: var(--button-background);
+    color: var(--button-disabled-text);
+    cursor: default;
+}
+
+
+/********************************/
+/* labeled text/number input    */
+/********************************/
+
+
+div.labeled-input-text {
+    margin: 0px;
+}
+
+div.labeled-input-text label {
+    display: inline;
+    text-align: left;
+    margin: 4px 0px 0px 4px;
+    padding: 0px;
+    width: 50%;
+}
+
+div.labeled-input-text input[type="text"] {
+    display: inline;
+    width: 50%;
+    background: var(--button-background);
+    color: var(--text);
+}
+div.labeled-input-text input[type="text"]:hover {
+    background: var(--button-hover-background);
+    color: var(--text);
+}
+div.labeled-input-text input[type="text"]:focus {
+    background: var(--button-selected-background);
+    color: var(--text);
+}
+div.labeled-input-text input[type="text"]:disabled {
+    background: var(--button-background);
+    color: var(--button-disabled-text);
+}
+
+
+div.labeled-input-text input[type="number"] {
+    display: inline;
+    width: 50%;
+    background: var(--button-background);
+    color: var(--text);
+}
+div.labeled-input-text input[type="number"]:hover {
+    background: var(--button-hover-background);
+    color: var(--text);
+}
+div.labeled-input-text input[type="number"]:focus {
+    background: var(--button-selected-background);
+    color: var(--text);
+}
+div.labeled-input-text input[type="number"]:disabled {
+    background: var(--button-background);
+    color: var(--button-disabled-text);
+}
+
+label.input-text {
+    position: relative;
+    display: block;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+}
+label.input-text span {
+    /*background: red;*/
+    position: static;
+    display: inline;
+    margin: 4px 0px 0px 4px;
+    border: 0;
+    padding: 0;
+}
+label.input-text input {
+    position: absolute;
+    display: inline;
+    left: 50%;
+    top: 0px;
+    width: 50%;
+    margin: 0px;
+}
+
+
+/*input[type="text"] *.inputtext-cursor {
+    color: var(--text);
+}*/
+
+
+/**************************/
+/* details                */
+/**************************/
+
+details {
+    background: var(--option-background);
+    display: block;
+    width: 100%;
+    margin: 2px;
+    border: 0px;
+    padding: 0px;
+}
+
+summary {
+    display: block;
+    width: 100%;
+    height: 24px;
+    background: transparent;
+    margin: 0px;
+    border: 0px;
+    padding: 4px 6px;
+}
+summary:hover {
+    background: var(--option-hover-background);
+}
+summary::marker {
+    display: inline;
+    margin: 4px 8px 2px 0px;
+    border: 0px;
+    padding: 0px;
+    width: 16px;
+    height: 14px;
+    background: transparent url('collapse_close.png');
+}
+details[open] > summary::marker {
+    background: transparent url('collapse_open.png');
+}
+
+
+details > div.contents {
+    /*display: none;*/
+    border: 0px;
+    border-color: transparent;
+    background: var(--panel-two-background);
+    padding: 4px 4px 4px 4px;
+    margin: 0px 0px 0px 0px;
+}
+/*details[open] > div.inside {
+    display: block;
+}*/
+
+
+
+/********************************/
+/* GENERAL DIALOG STYLING       */
+/********************************/
+
+dialog {
+    display: block;
+    margin: 4px;
+    border-radius: 4px;
+    border: 0px;
+    background: var(--panel-background);
+    color: var(--text);
+}
+dialog.framed {
+    margin: 4px;
+    border: 1px var(--header-background);
+    border-radius: 4px;
+    padding: 0px;
+}
+
+dialog > h1 {
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    background: var(--header-background);
+    color: var(--text);
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+    padding: 4px;
+}
+
+dialog.moveable > h1:hover {
+    cursor: grab;
+}
+dialog.moveable > h1:active {
+    cursor: grab;
+    /*background: var(--button-hover-background);*/
+}
+
+/* dialog minimize and close buttons */
+button.dialog-action {
+    display: none;
+    max-width: 16px;
+    max-height: 18px;
+    margin: 1px;
+    border: 0px;
+    padding: 5px;
+    background-color: transparent;
+}
+
+dialog.minimizeable button.dialog-minimize {
+    display: inline;
+}
+button.dialog-minimize {
+    background-image: url('collapse_open.png');
+}
+button.dialog-minimize:hover {
+    background-color: var(--button-hover-background);
+}
+button.dialog-minimize:active:hover {
+    background-color: var(--button-selected-background);
+}
+button.dialog-minimize:active {
+    background-color: var(--button-hover-background);
+}
+
+dialog.closeable button.dialog-close {
+    display: inline;
+}
+button.dialog-close {
+    background-image: url('close.png');
+}
+button.dialog-close:hover {
+    background-color: var(--button-hover-background);
+}
+button.dialog-close:active:hover {
+    background-color: var(--button-selected-background);
+}
+button.dialog-close:active {
+    background-color: var(--button-hover-background);
+}
+
+
+
+
+/****************************/
+/* collections              */
+/****************************/
+
+div.collection {
+    margin: 6px 0px 6px 0px;
+    border: 0px;
+    padding: 0px;
+    background: var(--collection);
+}
+
+div.collection > h1 {
+    color: var(--text);
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    margin: 0px 0px 2px 0px;
+    border: 0px transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.20);
+    border-radius: 0px;
+    padding: 2px 6px;
+}
+
+div.collection > div.contents {
+    margin: 0px;
+    border: 0px;
+    border-radius: 4px;
+    padding: 0px;
+}
+
+div.collection > div#fpsdiv {
+    margin: 4px;
+}
+
+/* these are used to show/hide content based on state */
+div.show-hide {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/********************************/
+/* LOADING DIALOG STYLING       */
+/********************************/
+
+dialog#loadingdialog {
+    width: 40%;
+    left: 30%;
+    top: -40%;
+    z-index: 10000;
+}
+
+
+/********************************/
+/* MAIN TOOLS STYLING           */
+/********************************/
+
+dialog#maindialog {
+    width: 150px;
+    min-width: 50px;
+    max-width: 500px;
+    padding: 0px;
+}
+dialog#maindialog * {
+    overflow-x: hidden;
+}
+
+div#tools {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+label.tool {
+    background: var(--option-background);
+    margin: 1px 0px;
+    border: 0px;
+    padding: 4px 2px;
+}
+label.tool:hover {
+    background: var(--option-hover-background);
+}
+label.tool:hover:checked {
+    background: var(--option-selected-background);
+}
+label.tool:checked {
+    background: var(--option-selected-background);
+}
+label.tool > img {
+    display: inline;
+    width: 32px;
+    height: 32px;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+label.tool > span {
+    display: inline;
+    margin: 8px 4px; /*7px 4px;*/
+    border: 0px;
+    padding: 0px;
+    align-items: center;
+    align-content: center;
+}
+
+
+
+
+/********************************/
+/*                              */
+/********************************/
+
+
+
+label.mirror-enable {
+    display: inline;
+    width: 33.333%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding-left: 14px;
+}
+
+
+/***************************************************/
+/* tiny ui window                                  */
+/***************************************************/
+
+dialog#tinydialog {
+    width: 57px;
+    min-width: 56px;
+    padding: 0px;
+    overflow: hidden;
+}
+dialog#tinydialog button.dialog-minimize {
+    background-image: url('collapse_close.png');
+}
+dialog#tinydialog > div.contents {
+    overflow: hidden;
+}
+dialog#tinydialog span.dialog-title {
+    display: none;
+    font-size: 0px;
+    padding: 0px 2px;
+    margin-left: -2px;
+    height: 12px;
+}
+div#ttools > * {
+    display: inline;
+}
+dialog#tinydialog div#ttools {
+    margin: 2px;
+}
+label.ttool {
+    display: none;
+    background: var(--option-background);
+    margin: 2px;
+    padding: 4px;
+    width: 42px;
+}
+label.ttool:hover {
+    background: var(--option-hover-background);
+}
+label.ttool:hover:checked {
+    background: var(--option-selected-background);
+}
+label.ttool:checked {
+    background: var(--option-selected-background);
+}
+label.ttool > img {
+    display: inline;
+    margin:0px;
+    border:0px;
+    padding:0px;
+    width:32px;
+    height:32px;
+}
+dialog#tinydialog div#ttools button.dialog-expand {
+    display: inline;
+    padding: 12px 4px 16px 4px;
+    border: 0px;
+    width: 20px;
+    height: 40px;
+    background: transparent url('collapse_close.png');
+}
+
+
+/***************************************************/
+/* options window                                  */
+/***************************************************/
+
+dialog#optionsdialog {
+    left: 100%;
+    width: 225px;
+    min-width: 150px;
+    max-width: 500px;
+}
+dialog#optionsdialog-minimized {
+    left: 100%;
+    width: 225px;
+    min-width: 150px;
+    max-width: 500px;
+}
+dialog#optionsdialog-minimized button.dialog-minimize {
+    background-image: url('collapse_close.png');
+}
+
+
+/***************************************************/
+/* help window                                     */
+/***************************************************/
+
+dialog#helpsystem {
+    width: 60%;
+    left: 20%;
+    top: -2%;
+    /*height: 100%;*/
+    /*max-height: 100%;*/
+    background: hsla(200, 0%, 10%, 0.98);
+}
+dialog#helpsystem > div.contents {
+    max-height: 90%;
+}
+div#helpsystem-buttons {
+    /*position: absolute;*/
+    margin: 0px;
+    left: 0px;
+    bottom: -30px;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+div#helpsystem-buttons > button {
+    display: inline;
+    width: 25%;
+    text-align: center;
+    overflow: hidden;
+    white-space: pre;
+}
+
+
+
+/***************************************************/
+/* updater window                                  */
+/***************************************************/
+
+dialog#updatersystem {
+    width: 40%;
+    left: 30%;
+    top: -2%;
+    /*height: 100%;*/
+    /*max-height: 100%;*/
+    background: hsla(200, 0%, 10%, 0.98);
+}
+dialog#updatersystem > div.contents {
+    max-height: 90%;
+}
+dialog#updatersystem p {
+    margin: 4px 16px;
+}
+dialog#updatersystem div.collection {
+    /*display: none;*/
+    border: 1px black;
+    background: var(--panel-two-background);
+    padding: 4px 4px 4px 4px;
+    margin: 0px 4px 0px 4px;
+}
+div#updatersystem-buttons {
+    /*position: absolute;*/
+    margin: 0px;
+    left: 0px;
+    bottom: -30px;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+div#updatersystem-buttons > button {
+    display: inline;
+    width: 50%;
+    text-align: center;
+}
+
+div#version-options > label {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+}
+
+div#version-options > label.option-custom {
+    display: inline;
+    width: 50%;
+}
+
+div#version-options input#custom {
+    display: inline;
+    width: 50%;
+}
+
+
+
+/***************************************************/
+/* keymap window                                   */
+/***************************************************/
+
+dialog#keymapsystem {
+    width: 60%;
+    left: 20%;
+    top: -2%;
+    background: hsla(200, 0%, 10%, 0.98);
+}
+dialog#keymapsystem > div.contents {
+    max-height: 90%;
+}
+dialog#keymapsystem p {
+    margin: 4px 16px;
+}
+dialog#keymapsystem div.collection {
+    /*display: none;*/
+    border: 1px black;
+    background: var(--panel-two-background);
+    padding: 4px 4px 4px 4px;
+    margin: 0px 4px 0px 4px;
+}
+div#keymapsystem-buttons {
+    /*position: absolute;*/
+    margin: 0px;
+    left: 0px;
+    bottom: -30px;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+div#keymapsystem-buttons > button {
+    display: inline;
+    width: 33.33%;
+    text-align: center;
+}
+
+dialog#keymapsystem div.action {
+    text-align: left;
+}
+dialog#keymapsystem button.key {
+    display: inline;
+    width: 90%;
+    /*border: 1px black;*/
+    /*text-align: center;*/
+}
+dialog#keymapsystem button.delkey {
+    display: inline;
+    left: 90%;
+    width: 10%;
+    height: 26px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+dialog#keymapsystem div.actiontype {
+    width: 100%;
+}
+dialog#keymapsystem div.actiontype > label {
+    display: inline;
+    width: 20%;
+    text-align: center;
+}
+
+dialog#keymapsystem td.action {
+    width: 40%;
+}
+dialog#keymapsystem td.keymap {
+    width: 60%;
+}
+
+
+div#keymapsystem-cover {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(64, 64, 64, 0.75);
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+
+dialog#keymapconfig {
+    width: 40%;
+    left: 30%;
+    top: -30%;
+    background: hsla(200, 0%, 10%, 0.98);
+}
+
+/*dialog#keymapconfig table {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+dialog#keymapconfig tr {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+dialog#keymapconfig td {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+*/
+dialog#keymapconfig span#edit-action {
+    margin: 0px;
+    padding: 0px;
+}
+
+dialog#keymapconfig div#edit-key-mouse label {
+    display: inline;
+    text-align: center;
+}
+dialog#keymapconfig div#edit-key-mouse label input {
+    display: inline;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    width: 0px;
+}
+
+dialog#keymapconfig label#edit-key-label {
+    width: 95%;
+}
+dialog#keymapconfig label#edit-key-label span {
+    display: inline;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+dialog#keymapconfig label#edit-lmb-label {
+    width: 33.3333%;
+}
+dialog#keymapconfig label#edit-mmb-label {
+    width: 33.3333%;
+}
+dialog#keymapconfig label#edit-rmb-label {
+    width: 33.3333%;
+}
+
+dialog#keymapconfig label#edit-wu-label {
+    width: 50.0%;
+}
+dialog#keymapconfig label#edit-wd-label {
+    width: 50.0%;
+}
+
+
+dialog#keymapconfig input#edit-key:focus {
+    background: var(--button-selected-background);
+}
+
+dialog#keymapconfig div#edit-modifiers label {
+    display: inline;
+    width: 25%;
+}
+dialog#keymapconfig div#edit-type label {
+    display: inline;
+    width: 20%;
+    text-align: center;
+}
+dialog#keymapconfig div#config-buttons > button {
+    display: inline;
+    width: 33.33%;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/***************************************************/
+/* alert window                                    */
+/***************************************************/
+
+
+dialog.alertdialog {
+    width: 200px;
+    left: 20%;
+    max-height: 100%;
+    /*overflow: hidden;*/
+}
+dialog.alertdialog > div.contents {
+    max-height: 90%;
+}
+dialog.alertdialog div#alert-checker {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+div.alertdialog-buttons {
+    margin: 0px;
+    left: 0px;
+    bottom: -36px;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+div.alertdialog-buttons button {
+    display: inline;
+    width: 50%;
+    text-align: center;
+}
+dialog.alertdialog div.action-buttons button {
+    margin: 1px;
+    /*width: 100%;*/
+    display: inline;
+    white-space: pre;
+}
+
+
+dialog.alertdialog > div.contents {
+    max-height: 90%;
+    overflow-y: scroll;
+}
+
+dialog.alertdialog.note {
+    background-color: var(--alert-note);
+}
+
+dialog.alertdialog.warning {
+    background-color: var(--alert-warning);
+}
+
+dialog.alertdialog.error {
+    width: 60%;
+    background-color: var(--alert-error);
+}
+
+dialog.alertdialog.assert {
+    width: 60%;
+    background-color: var(--alert-assert);
+}
+dialog.alertdialog.exception {
+    width: 60%;
+    background-color: var(--alert-exception);
+}
+
+dialog.alertdialog pre#alert-report {
+    border: 1px black;
+    border-radius: 0px;
+    background: rgba(48, 32, 32, 1.0);
+    color: white;
+    white-space: pre;
+}
+
+
+
+
+/***************************************************/
+/* geometry window                                 */
+/***************************************************/
+
+dialog#geometrydialog {
+    left: 0px;
+    top: -100%;
+    /*bottom: -100px;*/
+    width: 120px;
+    max-width: 120px;  /* this is needed to force 120px wide dialog!? */
+    height: 98px;
+}
+
+dialog#geometrydialog-minimized {
+    width: 120px;
+    max-width: 120px;
+    left: 0px;
+    top: -100%;
+}
+dialog#geometrydialog-minimized button.dialog-minimize {
+    background-image: url('collapse_close.png');
+}
+
+dialog#geometrydialog table {
+    border: 0px transparent;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+dialog#geometrydialog tr {
+    margin: 0px;
+    border-width: 0px;
+    padding: 0px;
+}
+dialog#geometrydialog td {
+    margin: 0px;
+    border-width: 0px;
+    padding: 0px;
+}
+dialog#geometrydialog table div {
+    border: 0px transparent;
+    background-color: transparent;
+    width: auto;
+    margin: 1px;
+    padding: 1px;
+}
+
+/***************************************************/
+/* markdown                                        */
+/***************************************************/
+
+article.mdown h1 {
+    width: 100%;
+    padding: 4px;
+    font-size: 18px;
+}
+article.mdown h1 img {
+    width:32px;
+    height:32px;
+    padding:0px
+}
+article.mdown h2 {
+    width: 100%;
+    padding: 4px;
+    font-size: 14px;
+}
+article.mdown h3 {
+    width: 100%;
+    padding: 4px;
+    font-size: 12px;
+    color: rgba(192, 192, 192, 1.0);
+}
+
+article.mdown p {
+    text-align: justify;
+    padding-left: 16px;
+}
+
+article.mdown ul {
+    padding-left: 16px;
+}
+
+article.mdown ol {
+    padding-left: 16px;
+}
+
+article.mdown ol > li::marker {
+    text-align: left;
+    color: white;
+    font-size: 10px;
+}
+
+article.mdown li > p {
+    margin: 0px;
+    border: 0px;
+    padding: 0px 0px 0px 15px;
+}
+
+article.mdown a {
+    position: relative;
+    left: 0px;
+    top: 1px;
+    overflow: visible;
+    padding: 0px 0px -1px 0px;
+    margin: 0px;
+    background-color: transparent;
+    border: 1px transparent;
+    border-bottom-color: var(--text);
+    cursor: default;
+    color: var(--text);
+}
+article.mdown a:hover {
+    color: white;
+    border-bottom-color: white;
+    cursor: default;
+}
+
+article.mdown img {
+    border-radius: 4px;
+}
+
+article.mdown pre {
+    font-family: monospace;
+    white-space: pre;
+    margin: 0px;
+    padding: 0px 4px;
+    background-color: var(--header-background);
+}
+
+article.mdown code {
+    font-family: monospace;
+    white-space: pre;
+    margin: 0px;
+    padding: 0px 4px;
+    background-color: var(--header-background);
+}
+
+article.mdown span {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+article.mdown span.html-arrow {
+    font-weight: normal;
+}
+
+article.mdown label {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+/***************************************************/
+/* pie menu                                        */
+/***************************************************/
+
+dialog#pie-menu {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(64, 0, 0, 0.2);*/
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+div#pie-menu-contents {
+    /*   width, height, padding, border-radius are set in rf_states.py   */
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.15); /* transparent;*/
+    margin: 0px;
+    border: 0px rgba(0, 0, 0, 0.25);
+    overflow: visible;
+}
+div.pie-menu-option {
+    /*  width, height are set in rf_states.py  */
+    position: absolute;
+    display: block;
+    background-color: rgba(64, 64, 64, 0.975);
+    margin: 0px;
+    border: 1px rgba(0, 0, 0, 0.95);
+    padding: 0px;
+    border-radius: 5px;
+}
+div.pie-menu-option.highlighted {
+    background-color: var(--button-selected-background);
+}
+div.pie-menu-option:hover {
+    background-color: var(--button-selected-background);
+}
+
+div.pie-menu-option-text {
+    margin-top: 8px;
+    color: var(--text);
+    text-align: center;
+}
+div.pie-menu-option.highlighted div.pie-menu-option-text {
+    color: white;
+}
+div.pie-menu-option:hover div.pie-menu-option-text {
+    color: white;
+}
+img.pie-menu-option-image {
+    /* width is set in rf_states.py */
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: transparent;
+}
+
+div.pie-menu-center {
+    /*  width, height, border-radius are set in rf_states.py  */
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin: 0px;
+    border: 1px rgba(0, 0, 0, 0.25);
+    padding: 0px;
+}
+
+/***************************************************/
+/* tooltip                                         */
+/***************************************************/
+
+dialog.tooltip {
+    border: 1px black;
+    background: hsla(0, 0%, 9%, 0.99); /*rgba(32,32,32,0.8);*/
+    color: white;
+    margin: 2px;
+    padding: 4px;
+}
+
+
+/***************************************************/
+/* delete dialog                                   */
+/***************************************************/
+
+dialog#deletedialog div.collection {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+dialog#deletedialog div.collection > h1 {
+    padding-top: 2px;
+}

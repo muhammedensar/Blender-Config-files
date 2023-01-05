@@ -1,0 +1,109 @@
+# do not include the CG Cookie built indicator file
+.cgcookie
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Mac OS X
+.DS_Store
+.project
+.pydevproject
+
+# updater
+retopoflow_updater/updater_status.json
+retopoflow_updater_status.json
+updater_tmp/*
+
+# RF options files
+RetopoFlow_options
+RetopoFlow_options.json
+
+# RF Custom keymaps
+RetopoFlow_keymaps.json
+
+# RF backup file
+RetopoFlow_backup.blend
+
+# RF screenshot
+RetopoFlow_screenshot.png
+
+# Profiler output file
+profiler_data.txt
+RetopoFlow_profiler.txt
+
+system-info.txt
+
+# Blender symlinks
+blender
+b280
+b281
+b281a
+b282
+b282a
+b283
+b290
+b291
+b292
+b293
+b293-lts
+b300
+
+# test models folder
+test-models
+
+# temp folders
+tmp/
+test/
+issues/

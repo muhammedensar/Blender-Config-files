@@ -1,0 +1,21 @@
+You get two folders after you unzip the file(On the WinOnly Version):
+-quad_remesher_engine_1.0_win
+and -QuadRemesher_1.2_BlenderBridge_Win
+
+1) Go to–> appdata/roaming/Blender Foundation/Blender/2.9x/scripts/addons
+
+2) Place the CONTENTS of the “QuadRemesher_1.2_BlenderBridge_Win” folder in there.
+
+3)Run Blender.
+
+4)Go to edit->preferences->addons and search for Quad Remesher. Enable it.
+
+5)Push “N” in the viewport to view the righthand toolbar. Find Quad Remesh in the tabs there. Open it. Click “Remesh It”. Wait for it to download the files. (It will show a license agreement- accept it and close the dialogue when it prompts for license key.
+
+6)Now close Blender. Go to C:\ProgramData\Exoside\QuadRemesher\Datas_Blender\ QuadRemesherEngine_1.0
+
+7) Copy and replace the contents from the “quad_remesher_engine_1.0_win” file into the given directory. Replace it all.
+
+8) Run Blender and have fun!
+
+Thanks to man who cracked 1.0 version of License Manager. Now you can use it with 1.2 version
